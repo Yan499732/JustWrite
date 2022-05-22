@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JustWrite</title>
+	<link rel="stylesheet" type="text/css" href="style-light.css">
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+</head>
+<body id="Body" onload="InitializationFormattingPanel(); InitializationTextBlock(); InitializationDocumentsPanel()" onmousemove="ShowFormatingPanel()">
+	<header id="Header" onmouseenter="HeaderFocus()" onmouseleave="HeaderBlur()">
+		
+		<button id="files" class="Files" onclick="ShowDocumentsPanel()"></button>
+		<button id="save" class="Save" onclick="SaveDocument()"></button>
+		<button id="export" class="Export" onclick="ExportData()"></button>
+		<button id="import" class="Import" onclick="ImportData()"></button>
+
+		<div id="FormattingPanel" class="FormattingPanel">
+			<button id="text-title" class="Text-Title" onclick="Title()"></button>
+
+			<button id="type-bold" class="Type-Bold" onclick="Bold()"></button>
+			<button id="type-italic" class="Type-Italic" onclick="Italic()"></button>
+			<button id="type-underline" class="Type-Underline" onclick="Underline()"></button>
+			<button id="type-strikethrough" class="Type-Strikethrough" onclick="Strikethrough()"></button>
+			<!--<button onclick="Sub()" style="background-image: url(icons/type-sub.svg);"></button>
+			<button onclick="Sup()" style="background-image: url(icons/type-sup.svg);"></button>-->
+
+			<button id="text-left" class="Text-Left" onclick="Align_Left()"></button>
+			<button id="text-center" class="Text-Center" onclick="Align_Center()"></button>
+			<button id="text-right" class="Text-Right" onclick="Align_Right()"></button>
+			<button id="text-justify" class="Text-Justify" onclick="Align_Justify()"></button>
+		
+			<button id="list-ul" class="List-Ul" onclick="Ul_List()"></button>
+			<button id="list-ol" class="List-Ol" onclick="Ol_List()"></button>
+
+			<button id="text-indent-left" class="Text-Indent-Left" onclick="Indent_Left()"></button>
+			<button id="text-indent-right" class="Text-Indent-Right" onclick="Indent_Right()"></button>
+		</div>
+
+		<button id="site-theme" class="Site-Theme" onclick="TextColor()"></button>
+		
+	</header>
+
+	<div id="DocumentsPanel" class="DocumentsPanel" onmouseenter="HeaderFocus()" onmouseleave="HeaderBlur()">
+		<div id="Documents-Panel-Header" class="Documents-Panel-Header">
+			<h2>Документы</h2>
+		</div>
+		<div id="Documents" class="Documents"></div>
+		<div class="NewDocument DivButton" onclick="NewDocument()"></div>
+	</div>
+
+	<div id="TextBlock" class="TextBlock" data-placeholder="Вставьте текст" contenteditable="true" onkeydown="HideFormatingPanel()" onmouseleave="ShowFormatingPanel()" onclick="HideDocumentsPanel()"></div>
+
+	<button id="statistics" class="Statistics" onclick="ShowHideStatisticsPanel()"></button>
+	<div id="statistics-panel" class="Statistics-Panel">
+		<div style="float: left">
+			<p>Слов:</p>
+			<p>Знаков (без пробелов):</p>
+			<p>Знаков (с пробелами):</p>
+			<p>Абзацев:</p>
+			<p>Строк:</p>
+		</div>
+		<div style="float: left; margin-left: 20px">
+			<p id="words">0</p>
+			<p id="characters-without-spaces">0</p>
+			<p id="characters-with-spaces">0</p>
+			<p id="paragraphs">0</p>
+			<p id="strings">0</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="scriptFormattingPanel.js"></script>
+	<script type="text/javascript" src="scriptTextBlock.js"></script>
+	<script type="text/javascript" src="scriptDocumentsPanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Alice';
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.TextBlock {
+	width: 803px;
+	font-size: 24px;
+	text-align: justify;
+	line-height: 32px;
+	margin: auto;
+	outline: none;
+	white-space: pre-wrap;
+	tab-size: 3;
+	transform: translateY(160px);
+	z-index: 1;
+}
+
+[contenteditable]:empty:before {
+	content: attr(data-placeholder);
+	color: grey;
+	display: inline-block;
+	cursor: text;
+}
+
+[contenteditable]:empty:focus:before {
+	content: "";
+}
+
+.TextBlock div {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 3.5vh;
+	text-align: center;
+}
+
+header {
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	top: 0;
+	transform: translateY(10px);
+	transition-duration: 0.2s;
+	z-index: 2;
+}
+
+.FormattingPanel {
+	width: 570px;
+	left: calc(50% - 285px);
+	float: left;
+	display: none;
+	position: absolute;
+}
+
+.Files {
+	background-image: url(icons/files.svg);
+	background-size: 26px;
+	display: none;
+	float: left;
+}
+
+.Save {
+	background-image: url(icons/save.svg);
+	background-size: 24px;
+	display: none;
+	float: left;
+}
+
+.Text-Title {
+	background-image: url(icons/text-title.svg);
+	background-size: 26px;
+}
+
+.Type-Bold {
+	background-image: url(icons/type-bold.svg);
+	background-size: 44px;
+}
+
+.Type-Italic {
+	background-image: url(icons/type-italic.svg);
+	background-size: 44px;
+}
+
+.Type-Underline {
+	background-image: url(icons/type-underline.svg);
+	background-size: 44px;
+}
+
+.Type-Strikethrough {
+	background-image: url(icons/type-strikethrough.svg);
+	background-size: 44px;
+}
+
+.Text-Left {
+	background-image: url(icons/text-left.svg);
+	background-size: 24px;
+}
+
+.Text-Center {
+	background-image: url(icons/text-center.svg);
+	background-size: 24px;
+}
+
+.Text-Right {
+	background-image: url(icons/text-right.svg);
+	background-size: 24px;
+}
+
+.Text-Justify {
+	background-image: url(icons/text-justify.svg);
+	background-size: 24px;
+}
+
+.List-Ul {
+	background-image: url(icons/list-ul.svg);
+	background-size: 26px;
+}
+
+.List-Ol {
+	background-image: url(icons/list-ol.svg);
+	background-size: 26px;
+}
+
+.Text-Indent-Left {
+	background-image: url(icons/text-indent-left.svg);
+	background-size: 24px;
+}
+
+.Text-Indent-Right {
+	background-image: url(icons/text-indent-right.svg);
+	background-size: 24px;
+}
+
+.Site-Theme {
+	background-image: url(icons/sun.svg);
+	background-size: 20px;
+	float: right;
+}
+
+button {
+	width: 40px;
+	height: 40px;
+	background: none;
+	border: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 24px;
+}
+
+button:hover {
+	background-color: rgb(210, 210, 210);
+	cursor: pointer;
+}
+
+button:active {
+	background-color: rgb(220, 220, 220);
+}
+
+.DocumentsPanel {
+	width: 100%;
+	height: calc(100vh - 40px);
+	top: 50px;
+	position: fixed;
+	background-color: rgb(230, 230, 230);
+	border-top: 1px solid rgb(215, 215, 215);
+	z-index: 1;
+	transition-duration: 0.2s;
+}
+
+.Documents-Panel-Header {
+	width: 100%;
+	height: 40px;
+	transform: translateY(-42px);
+	position: absolute;
+}
+
+h2 {
+	font-size: 24px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.Export {
+	background-image: url(icons/export.svg);
+	background-size: 26px;
+	float: left;
+}
+
+.Import {
+	background-image: url(icons/import.svg);
+	background-size: 26px;
+	float: left;
+}
+
+.Documents {
+	width: 100%;
+	float: left;
+}
+
+.Document {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	outline: none;
+	display: inline-block;
+	float: left;
+}
+
+.DivButton {
+	cursor: pointer;
+	border-right: 1px solid rgb(215, 215, 215);
+	border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.DivButton:hover {
+	background-color: rgb(245, 245, 245);
+}
+
+.DivButton:active {
+	background-color: rgb(250, 250, 250);
+}
+
+.Document input {
+	width: calc(100% - 2vw - 50px);
+	height: 50px;
+	font-size: 16px;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	outline: none;
+	border: none;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.Document button {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.Document-Rename {
+	background-image: url(icons/pen.svg);
+	background-size: 20px;
+	background-color: white;
+}
+
+.Document-Delete {
+	background-image: url(icons/trash.svg);
+	background-size: 24px;
+	background-color: white;
+}
+
+.WriteInput {
+	cursor: text;
+	background-color: rgb(245, 245, 245);
+}
+
+.NewDocument {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	background-image: url(icons/plus.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 32px;
+	font-size: 18px;
+	float: left;
+}
+
+.Statistics {
+	right: 0;
+	bottom: 10px;
+	position: fixed;
+	background-image: url(icons/statistics.svg);
+	background-size: 20px;
+}
+
+.Statistics-Panel {
+	position: fixed;
+	right: 0;
+	bottom: 50px;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-bottom: 0px;
+	border: 1px solid rgb(215, 215, 215);
+	border-right: none;
+	display: none;
+}
+
+.Statistics-Panel p {
+	padding-bottom: 15px;
+}
+
+@media screen and (max-device-width: 800px)
+{
+	.TextBlock {
+		font-size: 36px;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+
+	header {
+		height: 50px;
+	}
+
+	.FormattingPanel {
+		width: 700px;
+		left: calc(50% - 350px);
+	}
+
+	.Files {
+		background-size: 34px;
+	}
+
+	.Save {
+		background-size: 30px;
+	}
+
+	.Text-Title {
+		background-size: 34px;
+	}
+
+	.Type-Bold {
+		background-size: 54px;
+	}
+
+	.Type-Italic {
+		background-size: 54px;
+	}
+
+	.Type-Underline {
+		background-size: 54px;
+	}
+
+	.Type-Strikethrough {
+		background-size: 54px;
+	}
+
+	.Text-Left {
+		background-size: 34px;
+	}
+
+	.Text-Center {
+		background-size: 34px;
+	}
+
+	.Text-Right {
+		background-size: 34px;
+	}
+
+	.Text-Justify {
+		background-size: 34px;
+	}
+
+	.List-Ul {
+		background-size: 36px;
+	}
+
+	.List-Ol {
+		background-size: 36px;
+	}
+
+	.Text-Indent-Left {
+		background-size: 34px;
+	}
+
+	.Text-Indent-Right {
+		background-size: 34px;
+	}
+
+	.Site-Theme {
+		background-size: 30px;
+	}
+
+	button {
+		width: 50px;
+		height: 50px;
+	}
+
+	.DocumentsPanel {
+		width: 100%;
+		height: calc(100vh - 50px);
+		top: 60px;
+	}
+
+	.Documents-Panel-Header {
+		border: none;
+	}
+
+	h2 {
+		font-size: 32px;
+		transform: translateY(-4px);
+	}
+
+	.Export {
+		background-size: 36px;
+	}
+
+	.Import {
+		background-size: 38px;
+	}
+
+	.Document {
+		height: 60px;
+	}
+
+	.Document input {
+		width: calc(100% - 2vw - 60px);
+		height: 60px;
+		font-size: 26px;
+	}
+
+	.Document button {
+		width: 60px;
+		height: 60px;
+	}
+
+	.Document-Delete {
+		background-size: 34px;
+	}
+
+	.NewDocument {
+		height: 60px;
+		background-size: 42px;
+	}
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
