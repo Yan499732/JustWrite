@@ -61,6 +61,7 @@ header {
 	background-size: 26px;
 	display: none;
 	float: left;
+	z-index: 3;
 }
 
 .Save {
@@ -68,6 +69,7 @@ header {
 	background-size: 24px;
 	display: none;
 	float: left;
+	z-index: 3;
 }
 
 .Text-Title {
@@ -139,6 +141,7 @@ header {
 	background-image: url(icons/sun.svg);
 	background-size: 20px;
 	float: right;
+	z-index: 3;
 }
 
 button {
@@ -162,11 +165,9 @@ button:active {
 
 .DocumentsPanel {
 	width: 100%;
-	height: calc(100vh - 40px);
-	top: 50px;
-	position: fixed;
+	min-height: 100vh;
 	background-color: rgb(230, 230, 230);
-	border-top: 1px solid rgb(215, 215, 215);
+	position: absolute;
 	z-index: 1;
 	transition-duration: 0.2s;
 }
@@ -174,14 +175,14 @@ button:active {
 .Documents-Panel-Header {
 	width: 100%;
 	height: 40px;
-	transform: translateY(-42px);
 	position: absolute;
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 32px;
 	text-align: center;
 	font-weight: normal;
+	margin-top: 25px;
 }
 
 .Export {
@@ -198,12 +199,16 @@ h2 {
 
 .Documents {
 	width: 100%;
-	float: left;
+	margin-top: 50px;
 }
 
 .Document {
-	width: 100%;
-	height: 50px;
+	width: calc(18vw - 2px - 2.5px);
+	height: calc(18vw * 1.4);
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 3.5vw;
+	margin-right: 3.5vw;
 	background-color: white;
 	outline: none;
 	display: inline-block;
@@ -212,8 +217,7 @@ h2 {
 
 .DivButton {
 	cursor: pointer;
-	border-right: 1px solid rgb(215, 215, 215);
-	border-bottom: 1px solid rgb(215, 215, 215);
+	border: 1px solid rgb(215, 215, 215);
 }
 
 .DivButton:hover {
@@ -225,9 +229,10 @@ h2 {
 }
 
 .Document input {
-	width: calc(100% - 2vw - 50px);
-	height: 50px;
+	width: calc(100% - 2vw);
+	height: calc(18vw * 1.4 - 50px);
 	font-size: 16px;
+	text-align: center;
 	padding-left: 1vw;
 	padding-right: 1vw;
 	outline: none;
@@ -237,7 +242,7 @@ h2 {
 }
 
 .Document button {
-	width: 50px;
+	width: 100%;
 	height: 50px;
 	float: left;
 }
@@ -260,8 +265,12 @@ h2 {
 }
 
 .NewDocument {
-	width: 100%;
-	height: 50px;
+	width: calc(18vw - 2px - 2.5px);
+	height: calc(18vw * 1.4);
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 3.5vw;
+	margin-right: 3.5vw;
 	background-color: white;
 	background-image: url(icons/plus.svg);
 	background-repeat: no-repeat;
@@ -385,8 +394,7 @@ h2 {
 
 	.DocumentsPanel {
 		width: 100%;
-		height: calc(100vh - 50px);
-		top: 60px;
+		min-height: 100vh;
 	}
 
 	.Documents-Panel-Header {
@@ -394,8 +402,8 @@ h2 {
 	}
 
 	h2 {
-		font-size: 32px;
-		transform: translateY(-4px);
+		font-size: 48px;
+		transform: translateY(-10px);
 	}
 
 	.Export {
@@ -407,17 +415,20 @@ h2 {
 	}
 
 	.Document {
-		height: 60px;
+		width: calc(40vw - 2px - 5px);
+		height: calc(40vw * 1.4);
+		margin-left: 5vw;
+		margin-right: 5vw;
 	}
 
 	.Document input {
-		width: calc(100% - 2vw - 60px);
-		height: 60px;
-		font-size: 26px;
+		width: calc(100% - 2vw);
+		height: calc(40vw * 1.4 - 60px);
+		font-size: 32px;
 	}
 
 	.Document button {
-		width: 60px;
+		width: 100%;
 		height: 60px;
 	}
 
@@ -426,7 +437,10 @@ h2 {
 	}
 
 	.NewDocument {
-		height: 60px;
+		width: calc(40vw - 2px - 5px);
+		height: calc(40vw * 1.4);
+		margin-left: 5vw;
+		margin-right: 5vw;
 		background-size: 42px;
 	}
 }
